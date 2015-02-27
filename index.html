@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html ng-app="trklApp">
+    <head>
+        <title>Test</title>
+        
+        <!-- CSS -->
+        <link rel="stylesheet" href="css/normalize.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
+        <link rel="stylesheet" href="css/main.css">
+        
+        <!-- SCRIPTS -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.11/angular.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+        <script src="https://code.jquery.com/ui/1.11.3/jquery-ui.js"></script>
+        <script src="js/app.js"></script>
+        <script src="js/navbar.js"></script>
+    </head>
+    <body>
+        
+        <nav>
+            <div class="container">
+                <ul>
+                    <a href="/"><li class="brand navlink">BRAND</li></a>
+                    <a href="/"><li class="navlink">Hjem</li></a>
+                    <a href="/"><li>Om oss</li></a>
+                </ul>
+            </div>
+        </nav>
+        <div class="container">
+            <div class="row">
+                <div ng-controller="FeedController as feedCtrl">
+                    <div class="post col-md-12 feed" ng-repeat="post in feedCtrl.posts">
+                        <h2>{{post.title}}</h2>
+                        <img ng-src="{{post.image}}"/>
+                        <p>{{post.body}}</p>
+                        <h5>- {{post.author}}</h5>
+                        <div class="like"></div>
+                    </div>
+                </div> 
+            </div>
+        </div>
+        
+        
+    </body>
+    
+</html>
